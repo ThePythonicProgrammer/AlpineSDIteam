@@ -20,7 +20,7 @@ function sendContact() {
   alert(`${usr.first_name} thanks for registering.`)
 }
 
-window.onload = function() {
+window.onload = function sendEmail() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // generate a five digit number for the contact_number variable

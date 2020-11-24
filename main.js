@@ -1,17 +1,18 @@
-$(document).ready(function(){
-  $('.carousel').carousel();
+// Carousel Implementation
+document.addEventListener('DOMContentLoaded', function() {
+  var elms = document.querySelectorAll('.carousel');
+  var carousels = M.Carousel.init(elems, options);
 });
 
-$(document).ready(function(){
-    $('.scrollspy').scrollSpy();
+// Scrollspy Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    var elms = document.querySelectorAll('.carousel');
+    var scrollspy = M.ScrollSpy.init(elems, options);
   });
 
 function carousel_move(){
-  $('.carousel').carousel('next', 1);
+  carousels.next(1)
 }
-
-function carousel_recognition(id) {
-  return 'a[href="#' + id + '"]'
-}
-
+var active = scrollspy.getActiveElement()
+console.log(active)
 setInterval(carousel_move, 5000)

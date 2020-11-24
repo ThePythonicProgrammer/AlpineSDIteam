@@ -13,6 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
 function carousel_move(){
   carousels.next(1)
 }
-var active = scrollspy.getActiveElement()
-console.log(active)
 setInterval(carousel_move, 5000)

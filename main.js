@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 function carousel_move(){
-  var active = scrollspy.getActiveElement()
   carousels.next(1)
-  console.log(active)
 }
-
+var active = scrollspy.getActiveElement()
+console.log(active)
 setInterval(carousel_move, 5000)

@@ -15,3 +15,5 @@ function carousel_recognition(id) {
 }
 
 setInterval(carousel_move, 5000)
+
+carousel_recognition('.carousel')

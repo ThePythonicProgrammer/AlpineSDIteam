@@ -1,1 +1,3 @@
-M.AutoInit();
+$(document).ready(function(){
+  $('.carousel').carousel();
+});

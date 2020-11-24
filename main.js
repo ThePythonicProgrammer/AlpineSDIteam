@@ -2,14 +2,8 @@ $(document).ready(function(){
   $('.carousel').carousel();
 });
 
-// var time = 1;
-//
-// var interval = setInterval(function() {
-//    if (time <= 3) {
-//       $('.carousel').carousel('next', 1);
-//       time++;
-//    }
-//    else {
-//       clearInterval(interval);
-//    }
-// }, 5000);
+setInterval(carousel_move, 5000)
+
+function carousel_move(){
+  $('.carousel').carousel('next', 1);
+}

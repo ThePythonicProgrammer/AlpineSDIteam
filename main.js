@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Scrollspy Implementation
 document.addEventListener('DOMContentLoaded', function() {
-    var elms = document.querySelectorAll('.scrollspy');
+    var elms = document.querySelectorAll('.carousel');
     var scrollspy = M.ScrollSpy.init(elems, options);
   });
 

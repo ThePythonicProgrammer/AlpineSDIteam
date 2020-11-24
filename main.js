@@ -1,13 +1,13 @@
 // Carousel Implementation
 document.addEventListener('DOMContentLoaded', function() {
-  var carouselselms = document.querySelectorAll('.carousel');
-  var carousels = M.Carousel.init(carouselselems, options);
+  var elms = document.querySelectorAll('.carousel');
+  var carousels = M.Carousel.init(elems, options);
 });
 
 // Scrollspy Implementation
 document.addEventListener('DOMContentLoaded', function() {
-    var scrollspyelms = document.querySelectorAll('.scrollspy');
-    var scrollspy = M.ScrollSpy.init(scrollspyelems, options);
+    var elms = document.querySelectorAll('.scrollspy');
+    var scrollspy = M.ScrollSpy.init(elems, options);
   });
 
 function carousel_move(){

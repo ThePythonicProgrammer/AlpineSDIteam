@@ -2,9 +2,18 @@ $(document).ready(function(){
   $('.carousel').carousel();
 });
 
-setInterval(carousel_move, 5000)
+$(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
 
 function carousel_move(){
   $('.carousel').carousel('next', 1);
-  clearInterval()
 }
+
+function carousel_recognition(id) {
+  return 'a[href="#' + id + '"]'
+}
+
+setInterval(carousel_move, 5000)
+
+carousel_recognition('.carousel')

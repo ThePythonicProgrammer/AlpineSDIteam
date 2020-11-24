@@ -1,26 +1,18 @@
-// $(document).ready(function(){
-//   $('.carousel').carousel();
-// });
-//
-// $(document).ready(function(){
-//     $('.scrollspy').scrollSpy();
-//   });
-//
-// function carousel_move(){
-//   $('.carousel').carousel('next', 1);
-// }
-//
-// function carousel_recognition(id) {
-//   return 'a[href="#' + id + '"]'
-// }
-
+// Carousel Implementation
 document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.carousel');
-  var instances = M.Carousel.init(elems, options);
+  var carouselselms = document.querySelectorAll('.carousel');
+  var carousels = M.Carousel.init(carouselselems, options);
 });
 
+// Scrollspy Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    var scrollspyelms = document.querySelectorAll('.scrollspy');
+    var scrollspy = M.ScrollSpy.init(scrollspyelems, options);
+  });
+
 function carousel_move(){
-  instances.next(1)
+  var active = scrollspy.getActiveElement()
+  carousels.next(1)
 }
 
 setInterval(carousel_move, 5000)

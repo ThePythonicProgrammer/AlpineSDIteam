@@ -1,10 +1,10 @@
 // Carousel Implementation
 document.addEventListener('DOMContentLoaded', function() {
   var elms = document.querySelectorAll('.carousel');
-  var carousels = M.Carousel.init(elems, options);
+  var carousel = M.Carousel.init(elems, options);
 });
 
 function carousel_move(){
-  carousels.next(1)
+  carousel.next(1)
 }
 setInterval(carousel_move, 5000)

@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
  });
 
 function carousel_move(){
-  carousel.next(1)
-}
-setInterval(carousel_move, 5000)
+  carousel.next(1);
+};
+setInterval(carousel_move, 5000);

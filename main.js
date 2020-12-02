@@ -1,9 +1,15 @@
 // Carousel Implementation
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
+// $(document).ready(function(){
+//   $('.carousel').carousel();
+// });
 
-// function carousel_move(){
-//   carousel.next(1)
-// }
-// setInterval(carousel_move, 5000)
+// Standard Implementation
+document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.carousel');
+   var instances = M.Carousel.init(elems, options);
+ });
+
+function carousel_move(){
+  carousel.next(1)
+}
+setInterval(carousel_move, 5000)

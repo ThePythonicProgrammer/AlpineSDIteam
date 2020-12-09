@@ -14,11 +14,6 @@ $(document).ready(function(){
   $('.dropdown-trigger').dropdown();
 })
 
-// Adding parallax
-$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-
 // Carousel Motion
 function carousel_move(){
   $('.carousel').carousel('next', 1);

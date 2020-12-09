@@ -9,11 +9,13 @@ $(document).ready(function(){
 //    var instances = M.Carousel.init(elems, options);
 //  });
 
+// Dropdown Implementation
+$(document).ready(function(){
+  $('.dropdown-trigger').dropdown();
+})
+
+// Carousel Motion
 function carousel_move(){
   $('.carousel').carousel('next', 1);
 };
 setInterval(carousel_move, 5000);
-
-$(document).ready(function(){
-  $('.dropdown-trigger').dropdown();
-})

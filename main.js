@@ -14,4 +14,6 @@ function carousel_move(){
 };
 setInterval(carousel_move, 5000);
 
-$('.dropdown-trigger').dropdown();
+$(document).ready(function(){
+  $('.dropdown-trigger').dropdown();
+})

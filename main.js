@@ -18,7 +18,7 @@ $(document).ready(function(){
 function initCarousel(){
 	var carousel = $('#main-carousel')
 	for (var i=0; i<6; i++) { // change the less than to increase the number of items in the carousel
-		carousel.innerHTML += '<a class="carousel-item" href="#'+i+'!"><img src="assets/carousel/'i'.jpg" \n' //make sure all images are jpg's or else this will break
+		carousel.innerHTML += '<a class="carousel-item" href="#'+i+'!"><img src="assets/carousel/'+i+'.jpg" \n' //make sure all images are jpg's or else this will break
 	}
 }
 initCarousel()

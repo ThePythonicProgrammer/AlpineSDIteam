@@ -1,7 +1,23 @@
 // Carousel Implementation
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
+function initCarousel(){
+	var carousel = document.getElementById("main-carousel")
+	for (var i=1; i<6; i++) { // change the less than to increase the number of items in the carousel
+	//carousel.innerHTML = '<a class="carousel-item" href="#1!"><img src="assets/carousel/1.jpg" /></a>\n' //make sure all images are jpg's or else this will break
+  var item = document.createElement("a");
+  item.id = i
+  item.classList += "carousel-item"
+  carousel.appendChild(item);
+
+  var img = document.createElement("img");
+  img.src = "assets/carousel/"+i+".jpg"
+  document.getElementById(i).appendChild(img);
+  }
+}
+initCarousel()
+
+//$(document).ready(function(){
+  //$('.carousel').carousel();
+//});
 
 // Standard Implementation
 // document.addEventListener('DOMContentLoaded', function() {
@@ -15,16 +31,10 @@ $(document).ready(function(){
 })
 
 // Carousel Images
-function initCarousel(){
-	var carousel = $('#main-carousel')
-	for (var i=0; i<6; i++) { // change the less than to increase the number of items in the carousel
-		carousel.innerHTML += '<a class="carousel-item" href="#'+i+'!"><img src="assets/carousel/'i'.jpg" \n' //make sure all images are jpg's or else this will break
-	}
-}
-initCarousel()
+
 
 // Carousel Motion
-function carousel_move(){
-  $('.carousel').carousel('next', 1);
-};
-setInterval(carousel_move, 5000);
+//function carousel_move(){
+//  $('.carousel').carousel('next', 1);
+//};
+//setInterval(carousel_move, 5000);

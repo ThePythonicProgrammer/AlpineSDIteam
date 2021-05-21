@@ -1,3 +1,22 @@
 html {
   scroll-behavior: smooth;
 }
+html, body {
+    height: 100%;
+}
+#wrapper {
+  height: 64px;
+}
+
+/* pins for pushpin */
+.pin-top {
+  position: relative;
+}
+
+.pin-bottom {
+  position: relative;
+}
+
+.pinned {
+  position: fixed !important;
+}

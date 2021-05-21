@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 
 // Carousel Motion
-function carousel_move(){
-  $('.carousel').carousel('next', 1);
-};
-setInterval(carousel_move, 5000);
+//function carousel_move(){
+//  $('.carousel').carousel('next', 1);
+//};
+//setInterval(carousel_move, 5000);

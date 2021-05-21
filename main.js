@@ -6,7 +6,7 @@ function initCarousel(){
   var item = document.createElement("a");
   item.id = i
   item.classList += "carousel-item"
-  carousel.appendChild(item);
+  document.getElementById("main-carousel").appendChild(item);
 
   var img = document.createElement("img");
   img.src = "assets/carousel/"+i+".jpg"

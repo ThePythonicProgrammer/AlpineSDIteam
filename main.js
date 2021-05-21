@@ -22,6 +22,7 @@ function initCarousel(){
 	}
 }
 initCarousel()
+
 // Carousel Motion
 function carousel_move(){
   $('.carousel').carousel('next', 1);

@@ -7,9 +7,9 @@ function initCarousel(){
 }
 initCarousel()
 
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
+//$(document).ready(function(){
+  //$('.carousel').carousel();
+//});
 
 // Standard Implementation
 // document.addEventListener('DOMContentLoaded', function() {

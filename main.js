@@ -1,16 +1,25 @@
 // Carousel Implementation
 function initCarousel(){
 	var carousel = document.getElementById("main-carousel")
-	for (var i=1; i<6; i++) { // change the less than to increase the number of items in the carousel
-	//carousel.innerHTML = '<a class="carousel-item" href="#1!"><img src="assets/carousel/1.jpg" /></a>\n' //make sure all images are jpg's or else this will break
-  var item = document.createElement("a");
-  item.id = i
-  item.classList += "carousel-item"
-  carousel.appendChild(item);
 
-  var img = document.createElement("img");
-  img.src = "assets/carousel/"+i+".jpg"
-  document.getElementById(i).appendChild(img);
+  var fixedItem = document.createElement("div");
+  fixedItem.classList.add("carousel-fixed-item", "center")
+  carousel.appendChild(fixedItem);
+
+  var fixedButton = document.createElement("button");
+  fixedButton.classList.add("btn", "waves-effect", "white", "grey-text", "darken-text-2")
+  document.getElementsByClassName('carousel-fixed-item').appendChild(fixedButton)
+
+  for (var i=1; i<6; i++) { // change the less than to increase the number of items in the carousel
+	//carousel.innerHTML = '<a class="carousel-item" href="#1!"><img src="assets/carousel/1.jpg" /></a>\n' //make sure all images are jpg's or else this will break
+    var item = document.createElement("a");
+    item.id = i
+    item.classList += "carousel-item"
+    carousel.appendChild(item);
+
+    var img = document.createElement("img");
+    img.src = "assets/carousel/"+i+".jpg"
+    document.getElementById(i).appendChild(img);
   }
 }
 initCarousel()

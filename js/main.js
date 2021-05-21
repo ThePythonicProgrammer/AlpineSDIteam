@@ -59,3 +59,29 @@ var scrollButton = document.getElementById("scrollTop");
 scrollButton.addEventListener("click", function(){
   window.scrollTo(0,0);
 })
+
+// $('.pushpin-header').each(function(){
+//   var elm = $(this);
+//   var target = $('#' + elm.attr('data-target'));
+//   var top = target.offset().top
+//   var bottom = target.offset().top + target.outerHeight() - elm.height()
+//   elm.pushpin({
+//     top: top,
+//     bottom: bottom
+//   })
+// })
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var pushpins = document.querySelectorAll(".pushpin");
+//   pushpins.forEach(function(element) {
+//     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     var elemRect = element.getBoundingClientRect();
+//     var parentRect = element.parentElement.getBoundingClientRect();
+//     var elemTop = scrollTop + elemRect.top;
+//
+//     var instancePushpin = M.Pushpin.init(element, {
+//       top: elemTop,
+//       bottom: elemTop + parentRect.height - elemRect.height
+//     });
+//   })
+// });

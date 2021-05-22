@@ -33,19 +33,31 @@ scrollDown.addEventListener("click", function(){
 function bodyChange(){
   var select = document.getElementById('subjects')
   var bodyAdditons = []
-  var bodyAdditons = ['idk how you get this',
+  var bodyAdditons = ['no u',
     'I would like to join Iteam at ' + schoolname + '. ',
-    'I would like to learn more about Iteam, and have potential interest.',
-    '\n \n \n --This email was sent with automatic additions at ' + time + '.'
+    'I would like to learn more about Iteam, and have potential interest. ',
+    '\n \n \n --This email was sent with automatic additions at ' + time + '. '
   ]
   for (var i=0; i<4; i++) //the loop loops for all options; increase the number of options, increase this amount.
   {
       var childOption = select.getElementsByTagName('option')[i];
       if (childOption.selected == true) {
         document.getElementById('mailto').href += bodyAdditons[i];
-        console.log(bodyAdditons[i])
     }
   }
 }
 document.getElementById('mailto').addEventListener('click', bodyChange())
 document.getElementById('date3').innerHTML = time
+
+function loadDoc() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreaystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById('demo').innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET", "ajax_info.txt", true);
+	xhttp.send();
+}
+
+$('#ajax').click(loadDoc())

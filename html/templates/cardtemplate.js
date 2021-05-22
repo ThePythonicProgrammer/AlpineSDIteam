@@ -51,7 +51,7 @@ document.getElementById('date3').innerHTML = time
 
 function loadDoc() {
 	var xhttp = new XMLHttpRequest();
-	xhttp.onreaystatechange = function() {
+	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById('demo').innerHTML = this.responseText;
 		}

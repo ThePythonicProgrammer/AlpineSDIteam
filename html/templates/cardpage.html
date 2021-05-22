@@ -49,13 +49,33 @@
 
   <div class="container">
     <div class="section">
-
-
+	<div class="center">
+		<h2>Join our game club!</h2>
+	</div>
+    </div>
+    <div class="row">
+    	<div class="l6 s12">
+		<p>Players of any skill level needed!</p>
+		<blockquote>
+			This is a fun thing that we do... you should do it too!
+			<br>
+			-- Someone Probably
+		</blockquote>
+    	</div>
+    	<div class="input-field l6 s12">
+		<p>Gain new skills</p>
+		<select multiple id="skills">
+			<option value="" disabled>Tell us what skills you don't know!</option>
+			<option value="1">MALLC</option>
+			<option value="2">IDJ</option>
+			<option value="3">Blazing End Footstool Tech</option>
+		</select>
+	</div>
     </div>
   </div>
 
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large red">
+    <a class="btn-floating btn-large red" id="menu">
       <i class="large material-icons">mouse</i>
     </a>
     <ul>
@@ -71,10 +91,10 @@
       <h4>Contact Us</h4>
       <div class="input-field col s12">
         <select multiple id="subjects">
-          <option value="3" disabled>Choose your option</option>
+          <option value="" disabled>Choose your option</option>
           <option value="1">Join Iteam</option>
           <option value="2">More Information</option>
-          <option value="" id="date3" disabled selected></option>
+          <option value="3" id="date3" disabled selected></option>
         </select>
         <label>Subjects</label>
       </div>
@@ -85,16 +105,12 @@
   </div>
 
 
-
-
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+	  <button id="ajax">Testing AJAX</button>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>

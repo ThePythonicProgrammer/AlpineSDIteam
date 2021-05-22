@@ -110,7 +110,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-	  <button id="ajax">Testing AJAX</button>
+	  <button onClick="loadDoc()">Testing AJAX</button>
 	  <p id="demo"></p>
         </div>
         <div class="col l3 s12">
@@ -142,5 +142,17 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="cardtemplate.js"></script>
   <script type="text/javascript" src="../../js/materialize.js"></script>
+  <script type="text/javascript">
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById('demo').innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();
+  }
+  </script>
 </body>
 </html>

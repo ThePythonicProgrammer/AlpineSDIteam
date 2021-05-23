@@ -14,30 +14,8 @@
 		{"name":"date", "options":"disabled selected"}
 	],
 	"content":[
-		"row1": [
-			{"classes":"l6 s12", 
-			"type":"imageCard", 
-			"title":"JV Team Matchups", 
-			"img":"template.jpg", 
-			"text":"This is the information you need to know about the team matchups", 
-			"link": "#href!"}, 
-			{"classes": "l6 s12", 
-			"type":"card", 
-			"title":"Varsity Team Matchups", 
-			"text":"This is the information you need to know about the team matchups", 
-			"link":"#href2!"}],
-		
-		"row2": [
-			{"classes":"btn waves-effect waves-teal", 
-			"type":"button", 
-			"text":"Click This Cool Button!", 
-			"onClick": "click()"}
-		],
-		"row3": [
-			{"classes":"teal-text", 
-			"type":"h2",
-			"text":"This is cool text"
-			}
-		]
+		"row1": [{"classes":"l6 s12", "type":"imageCard", "title":"JV Team Matchups", "img":"template.jpg", "text":"This is the information you need to know about the team matchups", "link": "#href!"}, {"classes": "l6 s12", "type":"card", "title":"Varsity Team Matchups", "text":"This is the information you need to know about the team matchups", "link":"#href2!"}],
+		"row2": [{"classes":"btn waves-effect waves-teal", "type":"button", "text":"Click This Cool Button!", "onClick": "click()"}],
+		"row3": [{"classes":"teal-text", "type":"h2", "text":"This is cool text"}]
 	]
 }

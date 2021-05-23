@@ -67,9 +67,11 @@ xmlhttp.onreadystatechange = function() {
 			option.innerHTML = pageObj.contactOptions[i].name
 			
 			var options = pageObj.contactOptions[i].options.split(' ');
-			for (j in options){
-				option.setAttribute(options[j], options[j]);
-			}
+			console.log(options)
+			document.getElementById('subjects').appendChild(option)
+			//for (j in options){
+			//	option.setAttribute(options[j], options[j]);
+			//}
 			
 		}
 

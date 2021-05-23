@@ -19,7 +19,7 @@
 </head>
 <body>
   <nav>
-    <div class="nav-wrapper teal">
+    <div class="nav-wrapper primaryColor">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">JV Team</a></li>
@@ -37,13 +37,13 @@
           <h5 class="header col s12 light">What we do</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light primaryColor lighten-1">Get Started</a>
         </div>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax"><img src="template.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img id="parallaximg" alt="It's JSON's Fault not mine"></div>
   </div>
 
 
@@ -52,25 +52,9 @@
 	<div class="center">
 		<h2>Join our game club!</h2>
 	</div>
-    </div>
-    <div class="row">
-    	<div class="l6 s12">
-		<p>Players of any skill level needed!</p>
-		<blockquote>
-			This is a fun thing that we do... you should do it too!
-			<br>
-			-- Someone Probably
-		</blockquote>
-    	</div>
-    	<div class="input-field l6 s12">
-		<p>Gain new skills</p>
-		<select multiple id="skills">
-			<option value="" disabled>Tell us what skills you don't know!</option>
-			<option value="1">MALLC</option>
-			<option value="2">IDJ</option>
-			<option value="3">Blazing End Footstool Tech</option>
-		</select>
-	</div>
+    	<div class="row" id="row1"></div>
+	<div class="row" id="row2"></div>
+	<div class="row" id="row3"></div>
     </div>
   </div>
 
@@ -105,30 +89,30 @@
   </div>
 
 
-  <footer class="page-footer teal">
+  <footer class="page-footer primaryColor">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-	  <button id="ajax">Testing AJAX</button>
+          <h5 class="accentTextColor">Company Bio</h5>
+	  <button onClick="loadDoc()">Testing AJAX</button>
 	  <p id="demo"></p>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="accentTextColor">Settings</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="accentTextColor" href="#!">Link 1</a></li>
+            <li><a class="accentTextColor" href="#!">Link 2</a></li>
+            <li><a class="accentTextColor" href="#!">Link 3</a></li>
+            <li><a class="accentTextColor" href="#!">Link 4</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="accentTextColor">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="accentTextColor" href="#!">Link 1</a></li>
+            <li><a class="accentTextColor" href="#!">Link 2</a></li>
+            <li><a class="accentTextColor" href="#!">Link 3</a></li>
+            <li><a class="accentTextColor" href="#!">Link 4</a></li>
           </ul>
         </div>
       </div>
@@ -142,5 +126,17 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="cardtemplate.js"></script>
   <script type="text/javascript" src="../../js/materialize.js"></script>
+  <script type="text/javascript">
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById('demo').innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();
+  }
+  </script>
 </body>
 </html>

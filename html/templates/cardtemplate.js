@@ -49,15 +49,35 @@ function bodyChange(){
 document.getElementById('mailto').addEventListener('click', bodyChange())
 document.getElementById('date3').innerHTML = time
 
-function loadDoc() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById('demo').innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "ajax_info.txt", true);
-	xhttp.send();
-}
 
-$('#ajax').click(loadDoc())
+// DO NOT MESS WITH THIS SECTION IF YOU DO NOT KNOW WHAT YOU ARE DOING!! IF THIS GETS BROKEN, MOST OF THE CONTENT ON THE SUPPORTING PAGE GETS BROKEN!!! SAME GOES WITH THE SUPPORTING .JSON FILE!!!!!
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+	if (this.readyState ==4 && this.status == 200){
+		var pageObj = JSON.parse(this.responseText);
+		document.getElementsByClassName('primaryColor').classList += pageObj.primaryColor;
+		document.getElementsByClassName('accentColor').classList += pageObj.accentColor;
+		document.getElementsByClassName('accentTextColor').classList += pageObj.accentTextColor;
+		
+		document.getElementById('parallaximg').src = pageObj.backgroundImage;
+
+		for (i in pageObj.contactOptions){
+			var option = document.createElement('option');
+			option.value = i
+			option.innerHTML = pageObj.contactOptions[i].name
+			
+			var options = pageObj.contactOptions[i].options.split(' ');
+			for (j in options){
+				option.setAttribute(options[j], options[j]);
+			}
+			
+		}
+
+		//for (i in pageObj.content){
+		//	var rownum = 'row' + i
+		//	var row = 
+		//}
+	}
+};
+xmlhttp.open("GET", "data.json", true);
+xmlhttp.send();

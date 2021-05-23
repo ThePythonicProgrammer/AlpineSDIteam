@@ -14,7 +14,7 @@
 		{"name":"date", "options":"disabled selected"}
 	],
 	"content":[
-		"row1": [
+	       	  {"row1": [
 			"item1":{
 				"classes":"l6 s12", 
 				"type":"imageCard", 
@@ -23,6 +23,7 @@
 				"text":"This is the information you need to know about the team matchups", 
 				"link": "#href!"
 			}, 
+			
 			"item2":{
 				"classes": "l6 s12", 
 				"type":"card", 
@@ -30,22 +31,22 @@
 				"text":"This is the information you need to know about the team matchups", 
 				"link":"#href2!"
 			}
-		],
-		"row2": [
+		  }],
+		{"row2": [
 			"item1":{
 				"classes":"btn waves-effect waves-teal", 
 				"type":"button", 
 				"text":"Click This Cool Button!", 
 				"onClick": "click()"
 			}
-		],
-		"row3": [
+		}],
+		{"row3": [
 			"item1":{
 				"classes":
 				"teal-text", 
 				"type":"h2", 
 				"text":"This is cool text"
 			}
-		]
+		]}
 	]
 }

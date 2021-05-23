@@ -8,28 +8,30 @@
 	"backgroundImage":"template.jpg",
 
 	"contactOptions":[
-		{"name":"Join Iteam", "options": ""},
+		{"name":"Join Iteam", "options": "selected"},
 		{"name":"Meeting Time Information", "options":""},
-		{"name":"Competition Information", "options":""},
-		{"name":"date", "options":"disabled selected"}
+		{"name":"Competition Information", "options":""}
 	],
 	"content":[
 	       	  {"row1": [
 			  {"item1":{
-				"classes":"l6 s12", 
-				"type":"imageCard", 
+				"size":"col l6 s12", 
+				"type":"card", 
 				"title":"JV Team Matchups", 
 				"img":"template.jpg", 
 				"text":"This is the information you need to know about the team matchups", 
-				"link": "#href!"
+				"link": "#href!",
+				"linkText":"Click me please!"
 			}}, 
 			
 			{"item2":{
-				"classes": "l6 s12", 
+				"size":"col l6 s12",	
 				"type":"card", 
 				"title":"Varsity Team Matchups", 
 				"text":"This is the information you need to know about the team matchups", 
-				"link":"#href2!"
+				"link":"#href2!",
+				"linkText":"Click Here Instead!",
+				"img":""
 			}}
 		  ]},
 		{"row2": [
@@ -37,13 +39,12 @@
 				"classes":"btn waves-effect waves-teal", 
 				"type":"button", 
 				"text":"Click This Cool Button!", 
-				"onClick": "click()"
+				"eventListener": {"click":"click()"}
 			}}
 		]},
 		{"row3": [
 			{"item1":{
-				"classes":
-				"teal-text", 
+				"classes":"teal-text", 
 				"type":"h2", 
 				"text":"This is cool text"
 			}}

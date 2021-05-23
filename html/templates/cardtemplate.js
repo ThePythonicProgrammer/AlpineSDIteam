@@ -51,9 +51,9 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 	if (this.readyState ==4 && this.status == 200){
 		var pageObj = JSON.parse(this.responseText);
-		document.getElementsByClassName('primaryColor').classList += pageObj.primaryColor;
-		document.getElementsByClassName('accentColor').classList += pageObj.accentColor;
-		document.getElementsByClassName('accentTextColor').classList += pageObj.accentTextColor;
+		document.getElementsByClassName('primaryColor').classList.add(pageObj.primaryColor);
+		document.getElementsByClassName('accentColor').classList.add(pageObj.accentColor);
+		document.getElementsByClassName('accentTextColor').classList.add(pageObj.accentTextColor);
 		
 		document.getElementById('parallaximg').src = pageObj.backgroundImage;
 
@@ -74,10 +74,81 @@ xmlhttp.onreadystatechange = function() {
 		}
    		$('select').formSelect();
 
-		//for (i in pageObj.content){
-		//	var rownum = 'row' + i
-		//	var row = 
-		//}
+		for (i in pageObj.content){
+			var row = pageObj.content[i]
+			for (j in row){
+				var item = row[j]
+				var row = document.createElement('div')
+				row.classList = "row"
+				document.getElementById('section').appendChild(row)
+
+				var col = document.createElement('div')
+				if (item.size != ""){
+					var colClasses = item.size.split(' ')
+					for (k in colClasses){
+						col.classList.add(colClasses[k]);
+					}
+				}
+				row.appendChild(col);
+				
+				if (item.type == "card"){
+
+					var card = document.createElement('div')
+					var card.classList.add(pageObj.accentColor, 'card', 'darken-1')
+					col.appendChild(card);
+					
+					if (item.img != ""){
+						var cardImage = document.createElement('div')
+						cardImage.classList.add('card-image')
+						card.appendChild(cardImage);
+						
+						var image = document.createElement('img')
+						image.src = item.img
+						cardImage.appendChild(image);
+
+						var cardTitle = document.createElement('span');
+						cardTitle.classList.add('card-title');
+						cardTitle.innerHTML = item.title
+						cardImage.appendChild(cardTitle);
+					} else {
+
+						var cardContent = document.createElement('div');
+						cardContent.classList.add('card-content', pageObj.accentTextColor)
+						card.appendChild(cardContent);
+					
+						var cardTitle = document.createElement('span');
+						cardTitle.classList.add('card-title');
+						cardTitle.innerHTML = item.title
+						cardContent.appendChild(cardTitle);
+
+					}
+
+					var cardText = document.createElement('p');
+					cardText.innerHTML = item.text
+					cardContent.appendChild(cardText);
+
+					var cardAction = document.createElement('div');
+					cardAction.classList.add('card-action');
+					card.appendChild(cardAction);
+					
+					if (item.link != ""){
+						var cardLink = document.createElement('a');
+						cardLink.innerHTML = item.linkText 
+						cardLink.href = item.link
+					}
+				} else {
+					try {
+						var obj = document.createElement(item.type);
+						objClasses = item.classes.split(' ');
+						for (k in objClasses) {
+							col.classList.add(colClasses(k));
+						}
+					} catch (error) {
+						console.error(error);
+					}
+				}
+			}
+		}
 	}
 };
 xmlhttp.open("GET", "data.json", true);

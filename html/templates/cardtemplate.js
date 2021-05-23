@@ -69,9 +69,11 @@ xmlhttp.onreadystatechange = function() {
 			var options = pageObj.contactOptions[i].options.split(' ');
 			console.log(options)
 			document.getElementById('subjects').appendChild(option)
-			//for (j in options){
-			//	option.setAttribute(options[j], options[j]);
-			//}
+			for (j in options){
+				if (options[j] != ""){
+					option.setAttribute(options[j], options[j]);
+				}
+			}
 			
 		}
 

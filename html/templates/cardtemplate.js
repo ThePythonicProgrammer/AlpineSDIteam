@@ -11,10 +11,6 @@ $(document).ready(function(){
   $('.fixed-action-btn').floatingActionButton();
 });
 
-$(document).ready(function(){
-   $('select').formSelect();
- });
-
  $(document).ready(function(){
     $('.modal').modal();
   });
@@ -76,6 +72,7 @@ xmlhttp.onreadystatechange = function() {
 			}
 			
 		}
+   		$('select').formSelect();
 
 		//for (i in pageObj.content){
 		//	var rownum = 'row' + i

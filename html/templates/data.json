@@ -31,7 +31,7 @@
 				"text":"This is the information you need to know about the team matchups", 
 				"link":"#href2!"
 			}}
-		  }],
+		  ]},
 		{"row2": [
 			{"item1":{
 				"classes":"btn waves-effect waves-teal", 
@@ -39,7 +39,7 @@
 				"text":"Click This Cool Button!", 
 				"onClick": "click()"
 			}}
-		}],
+		]},
 		{"row3": [
 			{"item1":{
 				"classes":

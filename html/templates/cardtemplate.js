@@ -80,6 +80,7 @@ xmlhttp.onreadystatechange = function() {
 				var itemObj = row[j]
 				for (k in itemObj){
 					var item = itemObj[k]
+					console.log(item)
 					var rows = document.createElement('div')
 					rows.classList = "row"
 					document.getElementById('section').appendChild(rows)

@@ -141,9 +141,9 @@ xmlhttp.onreadystatechange = function() {
 					try {
 						var obj = document.createElement(item.type);
 						obj.classList = item.classes
-						for (k in objClasses) {
-							col.classList.add(colClasses(k));
-						}
+						//for (k in objClasses) {
+						//	col.classList.add(colClasses(k));
+						//}
 					} catch (error) {
 						console.error(error);
 					}

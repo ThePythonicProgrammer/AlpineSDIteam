@@ -79,7 +79,7 @@ xmlhttp.onreadystatechange = function() {
 			for (j in row){
 				var itemObject = row[j]
 				var item = itemObject[j]
-				console.log(item.size)
+				console.log(item)
 				var rows = document.createElement('div')
 				rows.classList = "row"
 				document.getElementById('section').appendChild(rows)

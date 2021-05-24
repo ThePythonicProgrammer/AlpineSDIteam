@@ -75,6 +75,7 @@ xmlhttp.onreadystatechange = function() {
 
 		for (i in pageObj.content){
 			var row = pageObj.content[i]
+			console.log(row)
 			for (j in row){
 				var item = row[j]
 				console.log(item.size)

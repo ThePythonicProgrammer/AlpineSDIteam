@@ -93,8 +93,8 @@ xmlhttp.onreadystatechange = function() {
 				
 				if (item.type == "card"){
 					var card = document.createElement('div');
-					var card.classList += pageObj.accentColor 
-					var card.classList.add('card', 'darken-1');
+					card.className = pageObj.accentColor 
+					card.classList.add('card', 'darken-1');
 					col.appendChild(card);
 					
 					if (item.img != ""){

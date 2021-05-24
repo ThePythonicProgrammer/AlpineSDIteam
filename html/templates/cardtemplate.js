@@ -80,7 +80,6 @@ xmlhttp.onreadystatechange = function() {
 				var item = row[j]
 				var rows = document.createElement('div')
 				rows.classList = "row"
-				rows.id = i
 				document.getElementById('section').appendChild(rows)
 
 				var col = document.createElement('div')
@@ -90,69 +89,58 @@ xmlhttp.onreadystatechange = function() {
 						col.classList.add(colClasses[k]);
 					}
 				}
-				document.getElementById(i).appendChild(col);
 				
 				if (item.type == "card"){
 					var card = document.createElement('div');
 					card.className = pageObj.accentColor 
 					card.classList.add('card', 'darken-1');
-					card.id = "card" + i + " " + j
-					col.appendChild(card);
-					
+					col.innerHTML = card.outerHTML
 
 					var cardContent = document.createElement('div');
 					cardContent.classList.add('card-content');
 					cardContent.classList += pageObj.accentTextColor
-					cardContent.id = "cardContent" + i + " " + j
-					card.appendChild(cardContent);
 
+					var cardAction = document.createElement('div');
+					cardAction.classList.add('card-action');
+					
+					if (item.link != "" && item.link !== undefined){
+						var cardLink = document.createElement('a');
+						cardLink.innerHTML = item.linkText 
+						cardLink.href = item.link
+						cardAction.innerHTML = cardLink.outerHTML
+					}
+					
 					if (item.img != "" && item.img !== undefined){
 						var cardImage = document.createElement('div')
 						cardImage.classList.add('card-image')
-						cardImage.id = "cardImage" + i + " " + j
-						document.getElementById('card'+i+' '+j).insertBefore(cardImage, document.getElementById('cardContent'+i+' '+j));
-						
+					 	
 						var image = document.createElement('img')
 						image.src = item.img
-						document.getElementById('cardImage'+i+' '+j).appendChild(image);
 
 						var cardTitle = document.createElement('span');
 						cardTitle.classList.add('card-title');
 						cardTitle.innerHTML = item.title
-						document.getElementById('cardImage'+i+' '+j).appendChild(cardTitle);
+					
+						card.innerHTML = cardImage.outerHTML + cardContent.outerHTML
+						cardImage.innerHTML = image.outerHTML + cardTitle.outerHTML
 					} else {
 
 					
 						var cardTitle = document.createElement('span');
 						cardTitle.classList.add('card-title');
 						cardTitle.innerHTML = item.title
-	    					document.getElementById('cardContent'+i+' '+j).appendChild(cardTitle);
-
+						
+						cardContent.innerHTML = cardTitle.outerHTML	
 					}
 
 					var cardText = document.createElement('p');
 					cardText.innerHTML = item.text
-					document.getElementById('cardContent'+i+' '+j).appendChild(cardText);
-
-					var cardAction = document.createElement('div');
-					cardAction.classList.add('card-action');
-					cardAction.id = "cardAction" + i + ' ' + j
-					document.getElementById('card'+i+' '+j).appendChild(cardAction);
-					
-					if (item.link != "" && item.link !== undefined){
-						var cardLink = document.createElement('a');
-						cardLink.innerHTML = item.linkText 
-						cardLink.href = item.link
-						document.getElementById('cardAction'+i+' '+j).appendChild(cardLink)
-					}
+					cardContent.innerHTML += cardText.outerHTML
 				} else {
 					try {
 						var obj = document.createElement(item.type);
 						obj.classList = item.classes
-						document.getElementById(i).appendChild(obj)
-						//for (k in objClasses) {
-						//	col.classList.add(colClasses(k));
-						//}
+						card.innerHTML += obj.outerHTML
 					} catch (error) {
 						console.error(error);
 					}

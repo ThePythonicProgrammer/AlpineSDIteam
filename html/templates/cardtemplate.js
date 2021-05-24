@@ -142,7 +142,7 @@ xmlhttp.onreadystatechange = function() {
 					try {
 						var obj = document.createElement(item.type);
 						obj.classList = item.classes
-						card.innerHTML += obj.outerHTML
+						rows.innerHTML += obj.outerHTML
 					} catch (error) {
 						console.error(error);
 					}

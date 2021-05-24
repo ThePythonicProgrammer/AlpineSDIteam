@@ -26,24 +26,24 @@ scrollDown.addEventListener("click", function(){
   window.scrollTo(0, height)
 })
 
-function bodyChange(){
-  var select = document.getElementById('subjects')
-  var bodyAdditons = []
-  var bodyAdditons = ['no u',
-    'I would like to join Iteam at ' + schoolname + '. ',
-    'I would like to learn more about Iteam, and have potential interest. ',
-    '\n \n \n --This email was sent with automatic additions at ' + time + '. '
-  ]
-  for (var i=0; i<4; i++) //the loop loops for all options; increase the number of options, increase this amount.
-  {
-      var childOption = select.getElementsByTagName('option')[i];
-      if (childOption.selected == true) {
-        document.getElementById('mailto').href += bodyAdditons[i];
-    }
-  }
-}
-document.getElementById('mailto').addEventListener('click', bodyChange())
-document.getElementById('date3').innerHTML = time
+//function bodyChange(){
+//  var select = document.getElementById('subjects')
+//  var bodyAdditons = []
+//  var bodyAdditons = ['no u',
+//    'I would like to join Iteam at ' + schoolname + '. ',
+//    'I would like to learn more about Iteam, and have potential interest. ',
+//    '\n \n \n --This email was sent with automatic additions at ' + time + '. '
+//  ]
+//  for (var i=0; i<4; i++) //the loop loops for all options; increase the number of options, increase this amount.
+//  {
+//      var childOption = select.getElementsByTagName('option')[i];
+//     if (childOption.selected == true) {
+//      document.getElementById('mailto').href += bodyAdditons[i];
+//    }
+//  }
+//}
+//document.getElementById('mailto').addEventListener('click', bodyChange())
+//document.getElementById('date3').innerHTML = time
 
 
 // DO NOT MESS WITH THIS SECTION IF YOU DO NOT KNOW WHAT YOU ARE DOING!! IF THIS GETS BROKEN, MOST OF THE CONTENT ON THE SUPPORTING PAGE GETS BROKEN!!! SAME GOES WITH THE SUPPORTING .JSON FILE!!!!!

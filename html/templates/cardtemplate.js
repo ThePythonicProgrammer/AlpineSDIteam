@@ -97,7 +97,7 @@ xmlhttp.onreadystatechange = function() {
 					card.classList.add('card', 'darken-1');
 					col.appendChild(card);
 					
-					if (item.img != ""){
+					if (item.img != "" && item.img !== undefined){
 						var cardImage = document.createElement('div')
 						cardImage.classList.add('card-image')
 						card.appendChild(cardImage);
@@ -132,7 +132,7 @@ xmlhttp.onreadystatechange = function() {
 					cardAction.classList.add('card-action');
 					card.appendChild(cardAction);
 					
-					if (item.link != ""){
+					if (item.link != "" && item.link !== undefined){
 						var cardLink = document.createElement('a');
 						cardLink.innerHTML = item.linkText 
 						cardLink.href = item.link
@@ -140,7 +140,7 @@ xmlhttp.onreadystatechange = function() {
 				} else {
 					try {
 						var obj = document.createElement(item.type);
-						objClasses = item.classes.split(' ');
+						obj.classList = item.classes
 						for (k in objClasses) {
 							col.classList.add(colClasses(k));
 						}

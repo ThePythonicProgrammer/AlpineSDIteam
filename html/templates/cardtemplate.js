@@ -100,7 +100,7 @@ xmlhttp.onreadystatechange = function() {
 
 					var cardContent = document.createElement('div');
 					cardContent.classList.add('card-content');
-					cardContent.classList += pageObj.accentTextColor
+					cardContent.classList += pageObj.accentTextColorundefined
 
 					var cardAction = document.createElement('div');
 					cardAction.classList.add('card-action');
@@ -151,5 +151,5 @@ xmlhttp.onreadystatechange = function() {
 		}
 	}
 };
-xmlhttp.open("GET", "data.json");
+xmlhttp.open("GET", "data.json", true);
 xmlhttp.send();

@@ -89,7 +89,7 @@ xmlhttp.onreadystatechange = function() {
 						col.classList.add(colClasses[k]);
 					}
 				}
-				
+				rows.innerHTML = col.outerHTML	
 				if (item.type == "card"){
 					var card = document.createElement('div');
 					card.className = pageObj.accentColor 

@@ -92,9 +92,10 @@ xmlhttp.onreadystatechange = function() {
 				row.appendChild(col);
 				
 				if (item.type == "card"){
-
-					var card = document.createElement('div')
-					var card.classList.add(pageObj.accentColor, 'card', 'darken-1')
+					var accentColor = pageObj.accentColor;
+					var card = document.createElement('div');
+					var card.classList.add(pageObj.accentColor); 
+					var card.classList.add('card', 'darken-1');
 					col.appendChild(card);
 					
 					if (item.img != ""){
@@ -113,7 +114,8 @@ xmlhttp.onreadystatechange = function() {
 					} else {
 
 						var cardContent = document.createElement('div');
-						cardContent.classList.add('card-content', pageObj.accentTextColor)
+						cardContent.classList.add('card-content');
+						cardContent.classList.add(pageObj.accentTextColor);
 						card.appendChild(cardContent);
 					
 						var cardTitle = document.createElement('span');

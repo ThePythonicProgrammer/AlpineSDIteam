@@ -51,9 +51,9 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 	if (this.readyState ==4 && this.status == 200){
 		var pageObj = JSON.parse(this.responseText);
-		document.getElementsByClassName('primaryColor').classList.add(pageObj.primaryColor);
-		document.getElementsByClassName('accentColor').classList.add(pageObj.accentColor);
-		document.getElementsByClassName('accentTextColor').classList.add(pageObj.accentTextColor);
+		$('.primaryColor').each(function(){this.classList.add(pageObj.primaryColor)})
+		$('.accentColor').each(function(){this.classList.add(pageObj.accentColor)});
+		$('.accentTextColor').each(function(){this.classList.add(pageObj.accentTextColor)});
 		
 		document.getElementById('parallaximg').src = pageObj.backgroundImage;
 

@@ -10,7 +10,8 @@
 	"contactOptions":[
 		{"name":"Join Iteam", "options": "selected"},
 		{"name":"Meeting Time Information", "options":""},
-		{"name":"Competition Information", "options":""}
+		{"name":"Competition Information", "options":""},
+		{"name":"Help pay for programmers to get jobs", "options":"disabled selected"}
 	],
 	"content":[
 	       	  {"row1": [

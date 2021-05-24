@@ -77,74 +77,76 @@ xmlhttp.onreadystatechange = function() {
 			var row = pageObj.content[i]
 			console.log(row)
 			for (j in row){
-				var item = Object.entries(row)[j][1]
-				console.log(item)
-				var rows = document.createElement('div')
-				rows.classList = "row"
-				document.getElementById('section').appendChild(rows)
-				var col = document.createElement('div')
-				if (item.size !== "" && item.size !== undefined){
-					var colClasses = item.size.split(' ')
-					for (k in colClasses){
-						col.classList.add(colClasses[k]);
+				var itemObj = row[j]
+				for (k in itemObj){
+					var item = itemObj[k]
+					var rows = document.createElement('div')
+					rows.classList = "row"
+					document.getElementById('section').appendChild(rows)
+					var col = document.createElement('div')
+					if (item.size !== "" && item.size !== undefined){
+						var colClasses = item.size.split(' ')
+						for (k in colClasses){
+							col.classList.add(colClasses[k]);
+						}
+						console.log(colClasses)
 					}
-					console.log(colClasses)
-				}
-				rows.innerHTML = col.outerHTML	
-				if (item.type == "card"){
-					var card = document.createElement('div');
-					card.className = pageObj.accentColor 
-					card.classList.add('card', 'darken-1');
-					col.innerHTML = card.outerHTML
-					console.log(card)
+					rows.innerHTML = col.outerHTML	
+					if (item.type == "card"){
+						var card = document.createElement('div');
+						card.className = pageObj.accentColor 
+						card.classList.add('card', 'darken-1');
+						col.innerHTML = card.outerHTML
+						console.log(card)
 
-					var cardContent = document.createElement('div');
-					cardContent.classList.add('card-content');
-					cardContent.classList += pageObj.accentTextColorundefined
+						var cardContent = document.createElement('div');
+						cardContent.classList.add('card-content');
+						cardContent.classList += pageObj.accentTextColorundefined
 
-					var cardAction = document.createElement('div');
-					cardAction.classList.add('card-action');
-					
-					if (item.link != "" && item.link !== undefined){
-						var cardLink = document.createElement('a');
-						cardLink.innerHTML = item.linkText 
-						cardLink.href = item.link
-						cardAction.innerHTML = cardLink.outerHTML
-					}
-					
-					if (item.img != "" && item.img !== undefined){
-						var cardImage = document.createElement('div')
-						cardImage.classList.add('card-image')
-					 	
-						var image = document.createElement('img')
-						image.src = item.img
+						var cardAction = document.createElement('div');
+						cardAction.classList.add('card-action');
 
-						var cardTitle = document.createElement('span');
-						cardTitle.classList.add('card-title');
-						cardTitle.innerHTML = item.title
-					
-						card.innerHTML = cardImage.outerHTML + cardContent.outerHTML
-						cardImage.innerHTML = image.outerHTML + cardTitle.outerHTML
+						if (item.link != "" && item.link !== undefined){
+							var cardLink = document.createElement('a');
+							cardLink.innerHTML = item.linkText 
+							cardLink.href = item.link
+							cardAction.innerHTML = cardLink.outerHTML
+						}
+
+						if (item.img != "" && item.img !== undefined){
+							var cardImage = document.createElement('div')
+							cardImage.classList.add('card-image')
+
+							var image = document.createElement('img')
+							image.src = item.img
+
+							var cardTitle = document.createElement('span');
+							cardTitle.classList.add('card-title');
+							cardTitle.innerHTML = item.title
+
+							card.innerHTML = cardImage.outerHTML + cardContent.outerHTML
+							cardImage.innerHTML = image.outerHTML + cardTitle.outerHTML
+						} else {
+
+
+							var cardTitle = document.createElement('span');
+							cardTitle.classList.add('card-title');
+							cardTitle.innerHTML = item.title
+
+							cardContent.innerHTML = cardTitle.outerHTML	
+						}
+
+						var cardText = document.createElement('p');
+						cardText.innerHTML = item.text
+						cardContent.innerHTML += cardText.outerHTML
 					} else {
-
-					
-						var cardTitle = document.createElement('span');
-						cardTitle.classList.add('card-title');
-						cardTitle.innerHTML = item.title
-						
-						cardContent.innerHTML = cardTitle.outerHTML	
-					}
-
-					var cardText = document.createElement('p');
-					cardText.innerHTML = item.text
-					cardContent.innerHTML += cardText.outerHTML
-				} else {
-					try {
-						var obj = document.createElement(item.type);
-						obj.classList = item.classes
-						rows.innerHTML += obj.outerHTML
-					} catch (error) {
-						console.error(error);
+						try {
+							var obj = document.createElement(item.type);
+							obj.classList = item.classes
+							rows.innerHTML += obj.outerHTML
+						} catch (error) {
+							console.error(error);
+						}
 					}
 				}
 			}

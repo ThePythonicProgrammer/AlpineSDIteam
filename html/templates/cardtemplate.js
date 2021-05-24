@@ -63,7 +63,6 @@ xmlhttp.onreadystatechange = function() {
 			option.innerHTML = pageObj.contactOptions[i].name
 			
 			var options = pageObj.contactOptions[i].options.split(' ');
-			console.log(options)
 			document.getElementById('subjects').appendChild(option)
 			for (j in options){
 				if (options[j] != ""){
@@ -82,6 +81,7 @@ xmlhttp.onreadystatechange = function() {
 				var rows = document.createElement('div')
 				rows.classList = "row"
 				document.getElementById('section').appendChild(rows)
+				console.log(item[j])
 				var col = document.createElement('div')
 				if (item.size !== "" && item.size !== undefined){
 					var colClasses = item.size.split(' ')

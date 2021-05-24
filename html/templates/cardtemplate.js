@@ -90,7 +90,7 @@ xmlhttp.onreadystatechange = function() {
 						col.classList.add(colClasses[k]);
 					}
 				}
-				row.appendChild(col);
+				document.getElementById(i).appendChild(col);
 				
 				if (item.type == "card"){
 					var card = document.createElement('div');

@@ -92,9 +92,8 @@ xmlhttp.onreadystatechange = function() {
 				row.appendChild(col);
 				
 				if (item.type == "card"){
-					var accentColor = pageObj.accentColor;
 					var card = document.createElement('div');
-					var card.classList.add(accentColor); 
+					var card.classList += pageObj.accentColor 
 					var card.classList.add('card', 'darken-1');
 					col.appendChild(card);
 					
@@ -115,7 +114,7 @@ xmlhttp.onreadystatechange = function() {
 
 						var cardContent = document.createElement('div');
 						cardContent.classList.add('card-content');
-						cardContent.classList.add(pageObj.accentTextColor);
+						cardContent.classList += pageObj.accentTextColor
 						card.appendChild(cardContent);
 					
 						var cardTitle = document.createElement('span');

@@ -88,6 +88,7 @@ xmlhttp.onreadystatechange = function() {
 					for (k in colClasses){
 						col.classList.add(colClasses[k]);
 					}
+					console.log(colClasses)
 				}
 				rows.innerHTML = col.outerHTML	
 				if (item.type == "card"){
@@ -95,6 +96,7 @@ xmlhttp.onreadystatechange = function() {
 					card.className = pageObj.accentColor 
 					card.classList.add('card', 'darken-1');
 					col.innerHTML = card.outerHTML
+					console.log(card)
 
 					var cardContent = document.createElement('div');
 					cardContent.classList.add('card-content');

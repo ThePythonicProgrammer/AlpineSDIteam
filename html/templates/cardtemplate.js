@@ -78,11 +78,10 @@ xmlhttp.onreadystatechange = function() {
 			var row = pageObj.content[i]
 			for (j in row){
 				var item = row[j]
-				console.log(item)
+				console.log(item.size)
 				var rows = document.createElement('div')
 				rows.classList = "row"
 				document.getElementById('section').appendChild(rows)
-				console.log(item)
 				var col = document.createElement('div')
 				if (item.size !== "" && item.size !== undefined){
 					var colClasses = item.size.split(' ')

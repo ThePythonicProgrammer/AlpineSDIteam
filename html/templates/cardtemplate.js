@@ -81,7 +81,7 @@ xmlhttp.onreadystatechange = function() {
 				var rows = document.createElement('div')
 				rows.classList = "row"
 				rows.id = i
-				document.getElementById('section').appendChild(row)
+				document.getElementById('section').appendChild(rows)
 
 				var col = document.createElement('div')
 				if (item.size !== "" && item.size !== undefined){

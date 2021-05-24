@@ -94,7 +94,7 @@ xmlhttp.onreadystatechange = function() {
 				if (item.type == "card"){
 					var accentColor = pageObj.accentColor;
 					var card = document.createElement('div');
-					var card.classList.add(pageObj.accentColor); 
+					var card.classList.add(accentColor); 
 					var card.classList.add('card', 'darken-1');
 					col.appendChild(card);
 					

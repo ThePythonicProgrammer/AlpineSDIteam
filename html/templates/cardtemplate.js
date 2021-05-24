@@ -147,7 +147,6 @@ xmlhttp.onreadystatechange = function() {
 							console.error(error);
 						}
 					}
-				}
 			}
 		}
 	}
